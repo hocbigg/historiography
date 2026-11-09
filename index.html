@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Hocbigg - Historiography</title>
+  <meta name="description" content="Path to a free self-taught education in Historiography.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/historiography/">
+  <meta property="og:title" content="Hocbigg - Historiography">
+  <meta property="og:description" content="Path to a free self-taught education in Historiography.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/historiography/">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/historiography/">Historiography</a></li>
+      <li><a href="/historiography/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/historiography/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/historiography" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+<header class="page-header">
+  <img src="/images/logo.png" alt="Hocbigg logo">
+  <h1>Hocbigg - Historiography</h1>
+  <p class="page-subtitle">Path to a free self-taught education in Historiography.</p>
+  <p class="last-updated"><small>Last updated on: <time datetime="2026-10-07">2026-10-07</time></small></p>
+</header>
+<h2 id="introduction">Introduction</h2>
+<p>History is rarely a simple chronicle of past events; it is an ongoing process of investigation, interpretation, and narrative construction. Historiography is the study of how history is written, how historians think, and how historical understanding changes over time. Rather than asking merely <em>what happened</em>, historiography asks <em>how we know what happened</em>, <em>what assumptions govern the account</em>, and <em>why different historians arrive at contrasting conclusions from the same evidentiary record</em>. Studying this discipline trains you to read historical claims critically, detect underlying ideological frameworks, and evaluate the evidentiary foundations of any narrative about the past.</p>
+<p>This curriculum is built specifically for independent learners with no prior formal training in historical methods or philosophy. It requires no institutional access, subscription databases, or academic prerequisites.</p>
+<h3 id="how-to-navigate-the-curriculum">How to Navigate the Curriculum</h3>
+<p>The curriculum follows a deliberate intellectual sequence designed to build your understanding from epistemological foundations to practical method:</p>
+<ul>
+<li><strong>Epistemological Foundations:</strong> You begin with core questions about historical truth, facts, interpretation, and subjectivity, exploring how historians conceptualize their relationship to the past.</li>
+<li><strong>Chronological Evolution:</strong> You trace the development of historical consciousness from classical antiquity and Enlightenment philosophies through the nineteenth-century institutionalization of history as an empirical academic discipline under Leopold von Ranke.</li>
+<li><strong>Modern Theoretical Turns:</strong> You examine the major paradigm shifts of the twentieth century, progressing from the structural and socioeconomic models of the Annales School and Marxist history to the skepticism of the linguistic turn, postmodernism, and global perspectives.</li>
+<li><strong>The Craft of Evidence:</strong> You study source criticism—the practical rules of external and internal criticism, provenance, corroboration, and textual hermeneutics that historians use to turn raw traces into verifiable accounts.</li>
+</ul>
+<p>Because historiographical movements develop in direct dialogue with or reaction against earlier traditions, you will get the most value by moving through the theoretical and historical sections in order. The subject on source criticism may be studied either alongside the historical schools or as a capstone to ground theoretical debates in the physical realities of the archive.</p>
+<h3 id="beyond-the-core">Beyond the Core</h3>
+<p>This document covers only the mandatory foundational core that every student of history needs to master. Once you have established this base, you can expand your studies across the other resources in this series:</p>
+<ul>
+<li>Explore specialized methodologies—including historical GIS, non-Western historiographies, subaltern studies, and memory theory—in <a href="advanced_topics.html">Advanced Topics</a>.</li>
+<li>Apply your skills to tangible deliverables, such as primary source critiques, digital exhibits, oral history interviews, or historiographical essays, using the guides in <a href="projects.html">Projects</a>.</li>
+</ul>
+<h2 id="curriculum">Curriculum</h2>
+<h3 id="introduction-to-historiography-and-the-philosophy-of-history">Introduction to Historiography and the Philosophy of History</h3>
+<p>This subject introduces the foundational questions of historiography: what history is, how historians construct knowledge about the past, and whether historical writing can be objective.</p>
+<p><a href="https://archive.org/details/whatishistory0000carr" target="_blank" rel="noopener noreferrer">What Is History? by E.H. Carr (Internet Archive)</a> - The classic introductory text on the nature of historical knowledge, based on Carr's 1961 Cambridge lectures; available for digital borrowing.</p>
+<p><a href="https://archive.org/details/pursuitofhistory0000tosh" target="_blank" rel="noopener noreferrer">The Pursuit of History by John Tosh (Internet Archive)</a> - A comprehensive introduction to historical theory and practice, covering sources, interpretation, and the uses of history; available for digital borrowing.</p>
+<p><a href="https://plato.stanford.edu/entries/history" target="_blank" rel="noopener noreferrer">Philosophy of History (Stanford Encyclopedia of Philosophy)</a> - A peer-reviewed reference article covering the analytic and speculative branches of philosophy of history.</p>
+<p><a href="https://iep.utm.edu/history" target="_blank" rel="noopener noreferrer">Philosophy of History (Internet Encyclopedia of Philosophy)</a> - A complementary peer-reviewed encyclopedia entry that surveys the theoretical foundations of historiography.</p>
+<p><a href="https://ocw.mit.edu/courses/21h-390-theories-and-methods-in-the-study-of-history-fall-2022" target="_blank" rel="noopener noreferrer">Theories and Methods in the Study of History, MIT OpenCourseWare 21H.390</a> - A free MIT undergraduate course examining how historians in different parts of the world have approached the task of writing history.</p>
+<h3 id="history-of-historical-writing-western-tradition">History of Historical Writing — Western Tradition</h3>
+<p>This subject surveys the development of historical writing from antiquity through the Enlightenment, focusing on major historians whose methods and assumptions shaped the discipline.</p>
+<p><a href="https://archive.org/details/historiographyan00brei" target="_blank" rel="noopener noreferrer">Historiography: Ancient, Medieval, and Modern by Ernst Breisach (Internet Archive)</a> - The standard survey of Western historiography from antiquity to the present; available for digital borrowing.</p>
+<p><a href="https://classics.mit.edu" target="_blank" rel="noopener noreferrer">The Internet Classics Archive (MIT)</a> - A free repository of English translations of Greco-Roman works, including Herodotus's Histories and Thucydides's History of the Peloponnesian War, the foundational texts of Western historical writing.</p>
+<p><a href="https://standardebooks.org/ebooks/edward-gibbon/the-history-of-the-decline-and-fall-of-the-roman-roman-empire" target="_blank" rel="noopener noreferrer">The History of the Decline and Fall of the Roman Empire by Edward Gibbon (Standard Ebooks)</a> - A carefully edited, free ebook edition of Gibbon's Enlightenment masterpiece, essential for understanding narrative historical method.</p>
+<p><a href="https://www.gutenberg.org/ebooks/10574" target="_blank" rel="noopener noreferrer">The History of England by David Hume (Project Gutenberg)</a> - A free ebook of Hume's influential eighteenth-century narrative history, exemplifying Enlightenment historical writing.</p>
+<h3 id="major-historiographical-schools-and-twentieth-century-theories">Major Historiographical Schools and Twentieth-Century Theories</h3>
+<p>This subject covers the major theoretical movements that transformed historical practice in the twentieth century, including the Annales school, Marxist historiography, and the postmodern critique.</p>
+<p><a href="https://archive.org/details/metahistoryhisto00whit" target="_blank" rel="noopener noreferrer">Metahistory by Hayden White (Internet Archive)</a> - White's influential analysis of the narrative structure of nineteenth-century historical writing; available for digital borrowing.</p>
+<p><a href="https://ocw.mit.edu/courses/21h-991-theories-and-methods-in-the-study-of-history-fall-2010" target="_blank" rel="noopener noreferrer">Theories and Methods in the Study of History, MIT OpenCourseWare 21H.991</a> - A free MIT course that surveys a variety of approaches to the past used by historians writing in recent decades.</p>
+<p><a href="https://books.google.com/books?isbn=9780804795692" target="_blank" rel="noopener noreferrer">The French Historical Revolution: The Annales School, 1929-2014 by Peter Burke</a> - The definitive short study of the Annales school, the most influential twentieth-century movement in historical scholarship.</p>
+<p><a href="https://books.google.com/books?isbn=9780393319590" target="_blank" rel="noopener noreferrer">In Defence of History by Richard J. Evans</a> - A widely read response to postmodernist critiques of historical knowledge, offering a defense of reconstructive historical method.</p>
+<p><a href="https://books.google.com/books?isbn=9780393352991" target="_blank" rel="noopener noreferrer">Writing History in the Global Era by Lynn Hunt</a> - An accessible examination of how globalization is reshaping the practice and writing of history.</p>
+<h3 id="primary-source-analysis-and-historical-method">Primary Source Analysis and Historical Method</h3>
+<p>This subject teaches the practical skills of evaluating and interpreting primary sources, which form the evidentiary basis of all historical work.</p>
+<p><a href="https://www.loc.gov/teachers/usingprimarysources/" target="_blank" rel="noopener noreferrer">Primary Source Analysis Tool (Library of Congress)</a> - A free, structured guide and tool for analyzing primary sources across formats, developed by the Library of Congress.</p>
+<p><a href="https://ocw.mit.edu/courses/21h-931-seminar-in-historical-methods-spring-2004" target="_blank" rel="noopener noreferrer">Seminar in Historical Methods, MIT OpenCourseWare 21H.931</a> - A free MIT seminar designed to introduce students to fundamental issues and debates in the writing of history.</p>
+<p><a href="https://archive.org/details/pursuitofhistory0000tosh" target="_blank" rel="noopener noreferrer">The Pursuit of History by John Tosh (Internet Archive)</a> - Chapters 3 and 4 provide practical guidance on using sources and conducting historical research; available for digital borrowing.</p>
+<h3 id="historiographical-debates-and-interpretive-practice">Historiographical Debates and Interpretive Practice</h3>
+<p>This subject applies historiographical knowledge to specific debates, showing how different historians have interpreted the same events differently based on their methods and assumptions.</p>
+<p><a href="https://ocw.mit.edu/courses/21h-390-theories-and-methods-in-the-study-of-history-fall-2022" target="_blank" rel="noopener noreferrer">Theories and Methods in the Study of History, MIT OpenCourseWare 21H.390</a> - The course readings and assignments engage directly with competing historiographical interpretations.</p>
+<p><a href="https://ocw.mit.edu/courses/21h-991-theories-and-methods-in-the-study-of-history-fall-2010" target="_blank" rel="noopener noreferrer">Theories and Methods in the Study of History, MIT OpenCourseWare 21H.991</a> - Examines how historians conceive of their object of study and how they structure their accounts, using primary sources as a basis.</p>
+<p><a href="https://archive.org/details/historiographyan00brei" target="_blank" rel="noopener noreferrer">Historiography: Ancient, Medieval, and Modern by Ernst Breisach (Internet Archive)</a> - The concluding chapters trace how interpretive frameworks have shifted over time, providing context for understanding contemporary debates; available for digital borrowing.</p>
+<h2 id="curriculum_1">Curriculum</h2>
+<h3 id="foundations-of-historiography-and-historical-knowledge">Foundations of Historiography and Historical Knowledge</h3>
+<p>This subject introduces the epistemological foundations of history, examining how historians define historical facts, navigate subjectivity, and construct verifiable explanations of past human experience.</p>
+<p><a href="https://archive.org/details/pursuitofhistory0000tosh" target="_blank" rel="noopener noreferrer">The Pursuit of History by John Tosh (Internet Archive)</a> - Serves as the primary introductory textbook for the curriculum, systematically laying out the scope of historical inquiry, the problems of historical awareness, and the social functions of history.</p>
+<p><a href="https://archive.org/details/whatishistory0000carr" target="_blank" rel="noopener noreferrer">What Is History? by E.H. Carr (Internet Archive)</a> - A seminal, provocative essay collection to read alongside Tosh, challenging naive empiricism by emphasizing that historical facts are always mediated through the historian's own perspective and context.</p>
+<p><a href="https://archive.org/details/historianscraft0000marc" target="_blank" rel="noopener noreferrer">The Historian's Craft by Marc Bloch (Internet Archive)</a> - Complements Carr and Tosh by offering a deeply humane, classic defense of historical understanding, the nature of historical observation, and the craft of analyzing past societies.</p>
+<p><a href="https://ocw.mit.edu/courses/21h-390-theories-and-methods-in-the-study-of-history-fall-2022/" target="_blank" rel="noopener noreferrer">Theories and Methods in the Study of History (MIT OpenCourseWare 21H.390)</a> - Provides a complete, free undergraduate course syllabus and assignment structure that self-directed learners can use to organize and test their study of foundational historical theories.</p>
+<h3 id="evolution-of-historical-writing-classical-antiquity-to-the-nineteenth-century">Evolution of Historical Writing: Classical Antiquity to the Nineteenth Century</h3>
+<p>This subject traces the development of historical writing from Greco-Roman classical origins through medieval chronicles and Enlightenment philosophy to the nineteenth-century institutionalization of history as an academic discipline.</p>
+<p><a href="https://archive.org/details/historiographyan00brei" target="_blank" rel="noopener noreferrer">Historiography: Ancient, Medieval, and Modern by Ernst Breisach (Internet Archive)</a> - Serves as the comprehensive narrative survey for this stage, tracing the evolution of historical consciousness, genres, and institutional practices across more than two millennia.</p>
+<p><a href="https://archive.org/details/dli.ernet.449327" target="_blank" rel="noopener noreferrer">The Varieties of History: From Voltaire to the Present edited by Fritz Stern (Internet Archive)</a> - A canonical primary source reader meant to accompany Breisach, gathering the foundational methodological statements and essays of transformative historians from Voltaire and Ranke to Acton and Turner.</p>
+<h3 id="twentieth-century-historiographical-paradigms-annales-marxism-and-social-history">Twentieth-Century Historiographical Paradigms: Annales, Marxism, and Social History</h3>
+<p>This subject examines the mid-twentieth-century transformation of the discipline from traditional elite political narratives toward socioeconomic structures, total history, collective mentalities, and everyday life.</p>
+<p><a href="https://archive.org/details/isbn_2900814731276" target="_blank" rel="noopener noreferrer">The Houses of History: A Critical Reader in History and Theory by Anna Green and Kathleen Troup (Internet Archive)</a> - The core guided textbook for modern schools, providing clear introductory overviews of empiricism, Marxist historiography, the Annales School, and historical sociology, paired with representative sample texts and critical discussion questions.</p>
+<p><a href="https://books.google.com/books?isbn=9780804795692" target="_blank" rel="noopener noreferrer">The French Historical Revolution: The Annales School, 1929–2014 by Peter Burke</a> - A concise and essential monograph that deepens the study of the Annales movement introduced in Green and Troup, dissecting its conceptual breakthroughs such as the longue durée and history from below across three generations of French scholars.</p>
+<h3 id="the-postmodern-challenge-and-contemporary-frameworks">The Postmodern Challenge and Contemporary Frameworks</h3>
+<p>This subject investigates late-twentieth and twenty-first-century debates over the linguistic turn, post-structuralism, cultural history, and the expansion of historical inquiry to global, postcolonial, and gendered perspectives.</p>
+<p><a href="https://books.google.com/books?isbn=9780393319590" target="_blank" rel="noopener noreferrer">In Defence of History by Richard J. Evans</a> - A direct, accessible polemical defense of empirical historical methodology that critically examines radical postmodern skepticism, narrative deconstruction, and the limits of relativism.</p>
+<p><a href="https://books.google.com/books?isbn=9780226109336" target="_blank" rel="noopener noreferrer">Thinking About History by Sarah Maza</a> - A contemporary conceptual guide that organizes recent historiographical innovations around core thematic questions—the history of whom, where, and what—making modern theoretical turns intuitive for beginners.</p>
+<p><a href="https://books.google.com/books?isbn=9780393352991" target="_blank" rel="noopener noreferrer">Writing History in the Global Era by Lynn Hunt</a> - Builds on the debates in Evans and Maza, tracing how the retreat from sweeping socioeconomic models gave rise to cultural history and the contemporary imperative for transnational and global perspectives.</p>
+<h3 id="historical-evidence-and-source-criticism">Historical Evidence and Source Criticism</h3>
+<p>This subject introduces the practical epistemology of historical research, focusing on how historians authenticate primary sources, detect bias and distortion, interpret archival silences, and synthesize raw evidence into credible narratives.</p>
+<p><a href="https://archive.org/details/fromreliablesour0000howe" target="_blank" rel="noopener noreferrer">From Reliable Sources: An Introduction to Historical Methods by Martha Howell and Walter Prevenier (Internet Archive)</a> - The definitive undergraduate guide to source criticism, establishing rigorous techniques for external analysis (authenticity, date, provenance) and internal analysis (author intent, bias, context) across documentary forms.</p>
+<p><a href="https://archive.org/details/goingtosources00brun" target="_blank" rel="noopener noreferrer">Going to the Sources: A Guide to Historical Research and Writing by Anthony Brundage (Internet Archive)</a> - A practical companion to Howell and Prevenier that walks beginners through evaluating primary versus secondary sources, developing historical questions, and handling textual evidence.</p>
+    </article>
+  </main>
+
+</body>
+</html>

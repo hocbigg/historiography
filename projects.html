@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Projects</title>
+  <meta name="description" content="Projects curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/historiography/projects.html">
+  <meta property="og:title" content="Projects">
+  <meta property="og:description" content="Projects curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/historiography/projects.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/historiography/">Historiography</a></li>
+      <li><a href="/historiography/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/historiography/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/historiography" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="projects">Projects</h1>
+<blockquote>
+<p>"What I cannot create, I do not understand." — Richard Feynman</p>
+</blockquote>
+<ul>
+<li><a href="#write-your-own-historiographical-essay">Historiographical Essay</a></li>
+<li><a href="#write-your-own-historical-book-review">Historical Book Review</a></li>
+<li><a href="#write-your-own-primary-source-critique">Primary Source Critique</a></li>
+<li><a href="#conduct-your-own-oral-history-interviews">Oral History Interviews</a></li>
+<li><a href="#curate-your-own-digital-exhibit">Digital Exhibit</a></li>
+<li><a href="#build-your-own-interactive-timeline">Interactive Timeline</a></li>
+<li><a href="#build-your-own-historical-storymap">Historical StoryMap</a></li>
+<li><a href="#audit-your-own-public-monument">Public Monument Audit</a></li>
+<li><a href="#reconstruct-your-own-house-history">House History</a></li>
+</ul>
+<h2 id="write-your-own-historiographical-essay">Write your own historiographical essay</h2>
+<ul>
+<li><a href="https://courses.bowdoin.edu/writing-guides/" target="_blank" rel="noopener noreferrer">Reading, Writing, and Researching for History: A Guide for College Students (Patrick Rael, Bowdoin College)</a></li>
+<li><a href="https://pcur.princeton.edu/2020/04/writing-a-historiography/" target="_blank" rel="noopener noreferrer">Writing a Historiography (Princeton Correspondents on Undergraduate Research)</a></li>
+<li><a href="https://guides.lib.uoguelph.ca/Historiography" target="_blank" rel="noopener noreferrer">Write a Historiography (University of Guelph Library)</a></li>
+</ul>
+<h2 id="write-your-own-historical-book-review">Write your own historical book review</h2>
+<ul>
+<li><a href="https://history.uiowa.edu/undergraduate/history-writing-center/how-write-history-book-review" target="_blank" rel="noopener noreferrer">How to Write a History Book Review (University of Iowa History Writing Center)</a></li>
+<li><a href="https://www.hamilton.edu/academics/centers/writing/writing-resources/writing-a-book-review-history" target="_blank" rel="noopener noreferrer">Writing a Book Review for History (Hamilton College Writing Center)</a></li>
+<li><a href="https://www.carleton.edu/history/resources/history-study-guides/how-to-write-a-critical-book-review/" target="_blank" rel="noopener noreferrer">How to Write a Critical Book Review (Carleton College History Department)</a></li>
+</ul>
+<h2 id="write-your-own-primary-source-critique">Write your own primary source critique</h2>
+<ul>
+<li><a href="https://www.carleton.edu/history/resources/history-study-guides/how-to-analyze-a-primary-source/" target="_blank" rel="noopener noreferrer">How to Analyze a Primary Source (Carleton College History Department)</a></li>
+<li><a href="https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/guides/" target="_blank" rel="noopener noreferrer">Teacher's Guides and Analysis Tool: Analyzing Primary Sources (Library of Congress)</a></li>
+<li><a href="https://courses.bowdoin.edu/writing-guides/" target="_blank" rel="noopener noreferrer">Reading Primary Sources: The PAPER Framework (Patrick Rael, Bowdoin College)</a></li>
+</ul>
+<h2 id="conduct-your-own-oral-history-interviews">Conduct your own oral history interviews</h2>
+<ul>
+<li><a href="https://siarchives.si.edu/history/how-do-oral-history" target="_blank" rel="noopener noreferrer">How to Do Oral History (Smithsonian Institution Archives)</a></li>
+<li><a href="https://dohistory.org/on_your_own/toolkit/oralHistory.html" target="_blank" rel="noopener noreferrer">Step-by-Step Guide to Oral History (Judith Moyer, DoHistory)</a></li>
+<li><a href="https://oralhistory.org/principles-and-best-practices/" target="_blank" rel="noopener noreferrer">Principles and Best Practices for Oral History (Oral History Association)</a></li>
+</ul>
+<h2 id="curate-your-own-digital-exhibit">Curate your own digital exhibit</h2>
+<ul>
+<li><a href="https://programminghistorian.org/en/lessons/up-and-running-with-omeka" target="_blank" rel="noopener noreferrer">Up and Running with Omeka.net (Miriam Posner, Programming Historian)</a></li>
+<li><a href="https://programminghistorian.org/en/lessons/creating-an-omeka-exhibit" target="_blank" rel="noopener noreferrer">Creating an Omeka Exhibit (Miriam Posner and Megan R. Brett, Programming Historian)</a></li>
+<li><a href="https://programminghistorian.org/en/lessons/building-a-digital-exhibition-with-collectionbuilder-and-the-internet-archive" target="_blank" rel="noopener noreferrer">Building a Digital Exhibition with CollectionBuilder and the Internet Archive (Olivia Wikle, Evan Williamson, and Devin Becker, Programming Historian)</a></li>
+</ul>
+<h2 id="build-your-own-interactive-timeline">Build your own interactive timeline</h2>
+<ul>
+<li><a href="https://timeline.knightlab.com" target="_blank" rel="noopener noreferrer">Make a Timeline (Knight Lab, Northwestern University)</a></li>
+<li><a href="https://timeline.knightlab.com/docs/using-spreadsheets.html" target="_blank" rel="noopener noreferrer">Making a Timeline from a Google Spreadsheet (Knight Lab)</a></li>
+</ul>
+<h2 id="build-your-own-historical-storymap">Build your own historical storymap</h2>
+<ul>
+<li><a href="https://storymap.knightlab.com" target="_blank" rel="noopener noreferrer">StoryMapJS: Maps that Tell Stories (Knight Lab, Northwestern University)</a></li>
+<li><a href="https://programminghistorian.org/en/lessons/displaying-georeferenced-map-knightlab-storymap-js" target="_blank" rel="noopener noreferrer">Displaying a Georeferenced Map in KnightLab's StoryMap JS (Erica Y. Hayes and Mia Partlow, Programming Historian)</a></li>
+</ul>
+<h2 id="audit-your-own-public-monument">Audit your own public monument</h2>
+<ul>
+<li><a href="https://monumentlab.com/audit" target="_blank" rel="noopener noreferrer">National Monument Audit (Monument Lab)</a></li>
+<li><a href="https://historicalthinking.ca/historical-thinking-concepts" target="_blank" rel="noopener noreferrer">Historical Thinking Concepts (Historical Thinking Project)</a></li>
+</ul>
+<h2 id="reconstruct-your-own-house-history">Reconstruct your own house history</h2>
+<ul>
+<li><a href="https://guides.loc.gov/house-history" target="_blank" rel="noopener noreferrer">House History: A Resource Guide (Library of Congress)</a></li>
+<li><a href="https://ask.loc.gov/genealogy-local-history/faq/304931" target="_blank" rel="noopener noreferrer">Researching the History of Your House: Ask a Librarian FAQ (Library of Congress)</a></li>
+<li><a href="https://guides.loc.gov/us-local-history" target="_blank" rel="noopener noreferrer">U.S. Local History: A Resource Guide (Library of Congress)</a></li>
+</ul>
+    </article>
+  </main>
+
+</body>
+</html>

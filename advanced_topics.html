@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Historiography — Advanced Topics</title>
+  <meta name="description" content="Historiography — Advanced Topics curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/historiography/advanced_topics.html">
+  <meta property="og:title" content="Historiography — Advanced Topics">
+  <meta property="og:description" content="Historiography — Advanced Topics curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/historiography/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/historiography/">Historiography</a></li>
+      <li><a href="/historiography/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/historiography/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/historiography" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="historiography-advanced-topics">Historiography — Advanced Topics</h1>
+<p>The advanced curriculum provides specialized tracks for learners who have mastered foundational historical methods and Western historiography. Learners should select one or two tracks aligned with their specific research goals or methodological interests rather than attempting to complete all five:</p>
+<ul>
+<li><strong>Global and Comparative Historiography</strong>: Explores premodern and non-Western traditions of historical writing across China, the Islamic world, and Africa, establishing comparative frameworks for understanding historical consciousness globally.</li>
+<li><strong>Digital History and Computational Methods</strong>: Develops technical competencies in spatial history (GIS), algorithmic text mining, and Python scripting for large-scale archival corpus analysis.</li>
+<li><strong>Public History and Memory Studies</strong>: Examines how history is produced for and contested by the public through monuments, museum exhibits, collective remembrance, and oral history methodologies.</li>
+<li><strong>Advanced Interpretive Frameworks</strong>: Investigates specialized analytical lenses—microhistory, cultural history, intellectual contextualism, gender history, and environmental history—that govern how historians formulate arguments.</li>
+<li><strong>Postcolonial and Subaltern Historiography</strong>: Analyzes how imperial power structures organized archival knowledge, and interrogates the theoretical movements developed to recover marginalized voices and decenter Eurocentric narratives.</li>
+</ul>
+<h2 id="global-and-comparative-historiography">Global and Comparative Historiography</h2>
+<p>This track expands historical inquiry beyond the Western canon to examine how past societies across East Asia, the Islamic world, and Africa conceptualized, recorded, and interpreted their own histories.</p>
+<p>Comparative Global Historiography: <a href="https://archive.org/details/globalhistoryofm0000igge" target="_blank" rel="noopener noreferrer">A Global History of Modern Historiography (Georg G. Iggers, Q. Edward Wang, and Supriya Mukherjee)</a> - Surveys the development of historical writing across Europe, Asia, Africa, and the Americas since the eighteenth century, demonstrating how non-Western traditions adapted to and resisted Western historical models.</p>
+<p>Imperial Chinese Historiographical Tradition: <a href="https://books.google.com/books?isbn=9780824829350" target="_blank" rel="noopener noreferrer">Mirroring the Past: The Writing and Use of History in Imperial China (On-cho Ng and Q. Edward Wang)</a> - Traces the evolution of official and private historical writing from antiquity through the Qing period, analyzing the Confucian moral framework and bureaucratic documentation systems that shaped China's historical consciousness.</p>
+<p>Islamic Historiographical Tradition: <a href="https://books.google.com/books?isbn=9780521629365" target="_blank" rel="noopener noreferrer">Islamic Historiography (Chase F. Robinson)</a> - Dissects the origins, forms, and social functions of historical writing across the medieval Muslim world, from early prophetic tradition (<em>hadith</em>) and biographical dictionaries (<em>tabaqat</em>) to universal chronicles.</p>
+<p>African Historiographical Traditions: <a href="https://books.google.com/books?isbn=9781032110479" target="_blank" rel="noopener noreferrer">The Routledge Companion to Postcolonial African Historiography (edited by Thula Simpson and Immanuel R. Harisch)</a> - Examines the evolution of African historical scholarship, addressing the critical integration of oral traditions, archaeology, nationalist paradigms, and postcolonial interventions across distinct regional cultures.</p>
+<h2 id="digital-history-and-computational-methods">Digital History and Computational Methods</h2>
+<p>This track bridges historical theory with computational practice, providing hands-on workflows for spatial analysis, distant reading, and digital archive preservation.</p>
+<p>Foundations of Digital History: <a href="https://chnm.gmu.edu/digitalhistory/" target="_blank" rel="noopener noreferrer">Digital History: A Guide to Gathering, Preserving, and Presenting the Past on the Web (Daniel J. Cohen and Roy Rosenzweig)</a> - An open-access guide detailing the theoretical implications, technical infrastructure, copyright hurdles, and preservation strategies involved in producing digital historical scholarship.</p>
+<p>Historical Geographic Information Systems (HGIS): <a href="https://geospatialhistorian.wordpress.com" target="_blank" rel="noopener noreferrer">The Geospatial Historian (Jim Clifford, Josh MacFadyen, and Daniel Macfarlane)</a> - A structured, open tutorial series that trains researchers to georeference historic maps, create vector datasets, and analyze spatial transformations over time using open-source QGIS software.</p>
+<p>Computational Text Analysis and Topic Modeling: <a href="https://programminghistorian.org/en/lessons/topic-modeling-and-mallet" target="_blank" rel="noopener noreferrer">Getting Started with Topic Modeling and MALLET (Shawn Graham, Scott Weingart, and Ian Milligan, Programming Historian)</a> - A peer-reviewed practical lesson that introduces algorithmic topic modeling to identify latent thematic structures across large, unstructured historical text corpora.</p>
+<p>Python for Historical Corpus Analysis: <a href="https://programminghistorian.org/en/lessons/?topic=python" target="_blank" rel="noopener noreferrer">Python Lessons (Programming Historian)</a> - A progressive suite of open-access lessons designed specifically for humanists to master automated web scraping, data manipulation, and natural language processing.</p>
+<h2 id="public-history-and-memory-studies">Public History and Memory Studies</h2>
+<p>This track examines the social life of the past in the public arena, focusing on how collective memory is constructed, institutionalized, commemorated, and challenged outside academic settings.</p>
+<p>Public History Practice: <a href="https://books.google.com/books?isbn=9780367473082" target="_blank" rel="noopener noreferrer">Public History: A Textbook of Practice (Thomas Cauvin)</a> - A comprehensive professional guide covering the methodologies of museum curation, historic site preservation, community archival projects, and digital public engagement.</p>
+<p>Collective Memory and Commemoration: <a href="https://ocw.mit.edu/courses/21a-104-memory-culture-forgetting-spring-2016/" target="_blank" rel="noopener noreferrer">Memory, Culture, Forgetting (MIT OpenCourseWare 21A.104)</a> - An open university course that investigates how cultures construct, transmit, manipulate, and erase historical memories through commemorative rituals, media, and public policy.</p>
+<p>Sites of Memory and Heritage: <a href="https://books.google.com/books?isbn=9780231109259" target="_blank" rel="noopener noreferrer">Realms of Memory: Rethinking the French Past (Pierre Nora)</a> - The seminal theoretical treatise introducing the concept of <em>lieux de mémoire</em> (sites of memory) to explore how modern nations anchor their historical identity in specific monuments, symbols, and institutions.</p>
+<p>Oral History Methodology: <a href="https://oralhistory.org/principles-and-best-practices/" target="_blank" rel="noopener noreferrer">Principles and Best Practices (Oral History Association)</a> - The authoritative professional standard establishing ethical protocols, interview techniques, legal release frameworks, and archival preservation practices for living human testimony.</p>
+<h2 id="advanced-interpretive-frameworks">Advanced Interpretive Frameworks</h2>
+<p>This track deepens engagement with the major analytical turns of modern historiography, exploring how specialized methodologies alter the questions historians pose to their sources.</p>
+<p>Microhistory: <a href="https://archive.org/details/cheesewormscosmo00ginz" target="_blank" rel="noopener noreferrer">The Cheese and the Worms: The Cosmos of a Sixteenth-Century Miller (Carlo Ginzburg)</a> - The definitive microhistorical study demonstrating how the intense interrogation of a single, well-documented individual can reveal the broad ideological and cultural currents of early modern Europe.</p>
+<p>Cultural History: <a href="https://books.google.com/books?isbn=9780745630748" target="_blank" rel="noopener noreferrer">What is Cultural History? (Peter Burke)</a> - Traces the evolution of cultural history from classical models to the influence of anthropology and literary theory, explaining concepts like representation, performance, and cultural translation.</p>
+<p>Intellectual History: <a href="https://archive.org/details/whatisintellectu0000what" target="_blank" rel="noopener noreferrer">What is Intellectual History? (Richard Whatmore)</a> - Outlines the major methodological approaches to the history of ideas, focusing particularly on the Cambridge School's contextualism, speech-act theory, and the recovery of past political thought.</p>
+<p>Gender and Feminist Historiography: <a href="https://books.google.com/books?isbn=9780231188012" target="_blank" rel="noopener noreferrer">Gender and the Politics of History (Joan Wallach Scott)</a> - The foundational theoretical intervention establishing gender as a primary category of historical analysis, revealing how perceived sexual difference continually structures social and political power relations.</p>
+<p>Environmental Historiography: <a href="https://archive.org/details/whatisenvironmen0000hugh" target="_blank" rel="noopener noreferrer">What is Environmental History? (J. Donald Hughes)</a> - Introduces the ecological paradigm in historical studies, exploring the reciprocal relationship between human societies and the non-human natural environment over time.</p>
+<h2 id="postcolonial-and-subaltern-historiography">Postcolonial and Subaltern Historiography</h2>
+<p>This track investigates how imperial rule shaped the production of historical knowledge and examines the theoretical movements that emerged to deconstruct colonial archives and recover subordinate agency.</p>
+<p>Subaltern Studies and Peasant Agency: <a href="https://archive.org/details/dli.bengal.10689.12740" target="_blank" rel="noopener noreferrer">Selected Subaltern Studies (edited by Ranajit Guha and Gayatri Chakravorty Spivak)</a> - The foundational reader of the South Asian Subaltern Studies collective, demonstrating how to write history "from below" against both British colonialist and nationalist bourgeois paradigms.</p>
+<p>Orientalism and Colonial Discourse: <a href="https://books.google.com/books?isbn=9780394740676" target="_blank" rel="noopener noreferrer">Orientalism (Edward W. Said)</a> - The landmark study revealing how Western scholarship, literature, and administrative systems ideologically constructed the "Orient" as an object of knowledge to justify and maintain colonial dominion.</p>
+<p>Epistemic Violence and Subaltern Agency: <a href="https://books.google.com/books?isbn=9780231143851" target="_blank" rel="noopener noreferrer">Can the Subaltern Speak?: Reflections on the History of an Idea (edited by Rosalind C. Morris)</a> - Centers on Spivak's critique of post-structuralist and colonial historiography, examining the archival silences, epistemic violence, and institutional barriers that prevent marginalized subjects from representing themselves.</p>
+<p>Decentering Western Modernity: <a href="https://archive.org/details/provincializinge0000chak" target="_blank" rel="noopener noreferrer">Provincializing Europe: Postcolonial Thought and Historical Difference (Dipesh Chakrabarty)</a> - A theoretical work arguing that while European secular and social theories are indispensable for modern political thought, they remain inadequate for capturing the diverse temporalities and historical experiences of non-Western societies.</p>
+    </article>
+  </main>
+
+</body>
+</html>
